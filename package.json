@@ -1,16 +1,19 @@
 {
 	"name": "astroide",
-	"version": "0.6.8",
+	"version": "0.6.9",
 	"description": "Easy, simple, fast, quick Database Manager",
 	"main": "index",
 	"license": "MIT",
 	"author": "astroide",
-	"homepage": "https://github.com/astroidejs/astroide",
+	"homepage": "https://github.com/Umut-Ozkan/astroide",
+	"scripts": {
+		"types": "tsc index.js --declaration --emitDeclarationOnly --allowJs"
+	},
 	"bugs": {
-		"url": "https://github.com/astroidejs/astroide/issues"
+		"url": "https://github.com/Umut-Ozkan/astroide/issues"
 	},
 	"repository": {
-		"url": "git://github.com/astroidejs/astroide.git"
+		"url": "git://github.com/Umut-Ozkan/astroide.git"
 	},
 	"typings": "index.d.ts",
 	"dependencies": {
@@ -34,5 +37,8 @@
 		"npm",
 		"npmjs",
 		"nodejs"
-	]
+	],
+	"devDependencies": {
+		"typescript": "^4.3.5"
+	}
 }
