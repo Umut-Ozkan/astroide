@@ -1,4 +1,4 @@
-name: Build And Publish
+name: Test And Publish
 on: workflow_dispatch
 jobs:
     build_and_publish:
