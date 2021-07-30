@@ -1,37 +1,67 @@
-## Welcome to GitHub Pages
+[![](https://github.com/Umut-Ozkan/astroide/actions/workflows/test_and_publish.yml/badge.svg)](https://github.com/Umut-Ozkan/astroide) [![](https://github.com/Umut-Ozkan/astroide/actions/workflows/test.yml/badge.svg)](https://github.com/Umut-Ozkan/astroide) [![](https://img.shields.io/npm/v/astroide.svg?maxAge=3600)](https://github.com/Umut-Ozkan/astroide) [![](https://img.shields.io/npm/dt/astroide.svg?maxAge=3600)](https://github.com/Umut-Ozkan/astroide) [![](https://status.david-dm.org/gh/Umut-Ozkan/astroide.svg)](https://github.com/Umut-Ozkan/astroide) [![](https://status.david-dm.org/gh/Umut-Ozkan/astroide.svg?type=dev)](https://github.com/Umut-Ozkan/astroide) 
 
-You can use the [editor on GitHub](https://github.com/Umut-Ozkan/astroide/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![](https://nodei.co/npm/astroide.png?downloads=true&stars=true)](https://github.com/Umut-Ozkan/astroide)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Install Package 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```js
+npm i --save astroide
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Usage
 
-### Jekyll Themes
+```js
+const db = require("astroide");
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Umut-Ozkan/astroide/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[Setting A Value](https://lodash.com/docs/4.17.15#set)
 
-### Support or Contact
+```js
+db.set("my.cool.database","astroide") => astroide
+db.set("my.cool.database.array",[]) => []
+db.set("my.cool.database.number",31) => 31
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[Fetching Value](https://lodash.com/docs/4.17.15#get)
+
+```js
+db.get("my.cool.database");
+db.fetch("my.cool.database.number");
+```
+
+[Check if data created](https://lodash.com/docs/4.17.15#has)
+
+```js
+db.has("my.cool.database") => true
+db.has("my.bad.database") => false
+```
+
+[Add specified data](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
+
+```js
+db.add("my.cool.database.number", 31); // => 62
+db.add("my.cool.database.number", 31); // => 93
+```
+
+[Subtract specified data](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Subtraction_assignment)
+
+```js
+db.subtract("my.cool.database.number", 31); // => 62
+db.subtract("my.cool.database.number", 31); // => 31
+```
+
+[Push specified data](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+```js
+db.push("my.cool.database.array", 2); // => [2]
+db.push("my.cool.database.array", null); // => [2, null, 3, "str1", {}]
+db.push("my.cool.database.array", 3); // => [2, null, 3]
+db.push("my.cool.database.array", "str1"); // => [2, null, 3, "str1"]
+db.push("my.cool.database.array", {}); // => [2, null, 3, "str1", {}]
+```
+
+[Deleting a value in the database](https://lodash.com/docs/4.17.15#unset)
+
+```js
+db.delete("my.bad.database"); // => true
+```
