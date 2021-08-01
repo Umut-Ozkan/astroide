@@ -1,7 +1,12 @@
-const { writeFileSync, readFileSync } = require("fs");
+const { writeFileSync, readFileSync, existsSync, } = require("fs");
 const { set, get, has, unset } = require("lodash");
 
 class Database {
+	constructor() {
+		if (!existsSync(`./database.json`,)) {
+			writeFileSync(`./database.json`, "{}",);
+		}
+	}
 	/** 
 	 * Database File Name
 	 * @type {string}
